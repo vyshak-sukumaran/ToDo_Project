@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Todo</title>
+    <link href="{% static 'tasks/css/bootstrap.min.css' %}" rel="stylesheet">
+    <style>
+        body{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: #FFFFCC;
+        }
+        div.main {
+            width: 600px;
+            height: 100px;
+            margin: auto;
+            padding: 10px;
+            background-color: #FF6633;
+        }
+        div.sub {
+            width: 600px;
+            margin: auto;
+            padding: 10px;
+            background-color: #FFFF99;
+        }
+        form.frm {
+            text-align: center;
+        }
+        
+ 
+    </style>
+</head>
+<body>
+<div class="main">
+<p>Are you sure want to delete "{{item}}" ?</p>
+
+<form method="POST" action="">
+    {% csrf_token %}
+    <input class="btn btn-success" type="submit" name="Confirm" value="Confirm">
+    <a class="btn btn-primary" href="{% url 'index' %}">Cancel</a>
+</form>
+
+</div>
+</body>
+</html>

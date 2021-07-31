@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Todo</title>
+    <link href="{% static 'tasks/css/bootstrap.min.css' %}" rel="stylesheet">
+    <style>
+        body{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: #FFFFCC;
+        }
+        div.main {
+            width: 600px;
+            height: 100px;
+            margin: auto;
+            padding: 10px;
+            background-color: #FF6633;
+        }
+        div.sub {
+            width: 600px;
+            margin: auto;
+            padding: 10px;
+            background-color: #FFFF99;
+        }
+        form.frm {
+            text-align: center;
+        }
+        input[type='text']{
+            height: 70px;
+            width: 300px;
+            border: 2px solid #FF6633;
+            border-radius: 5px;
+        }
+ 
+    </style>
+</head>
+<body>
+<div class="main">
+
+<form method="POST" action="">
+    {% csrf_token %}
+
+    {{form}}
+    <input class="btn btn-success" type="submit" name="Update" value="Update">
+</form>
+</div>
+</body>
+</html>
